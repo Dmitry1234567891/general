@@ -1,20 +1,80 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<!--<h4  (click)="carVisibleHide= 'carVisibleHide=== none'? 'block':'none' " class="neaderMenu">1 Cars</h4>-->
+
+<h4 (click)="listCarVisibleHide()" class="neaderMenu">1 Cars</h4>
+
+
+<ul [ngStyle]="{display:carVisibleHide }">
+  <li class="listCar">
+    <input type="text" #carnm (keyup)="addcarName(carnm.value)" placeholder="Car Name">
+    <!--<span class="">&times;</span>-->
+  </li>
+  <li class="listCar">
+    <input type="text" #colorcar (keyup)="addcarColor(colorcar.value)" placeholder="Color">
+  </li>
+  <li class="listCar">
+    <input type="text" #engcps (keyup)="addcarengineCapacity(engcps.value)" placeholder="Engine Capacity">
+  </li>
+
+  <li>
+    <div class="add">+</div>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <div class="add">-</div>
+  </li>
+
+</ul>
+
+
+<div>
+  <h4 class="neaderMenu" (click)= "listYachtVisibleHide()">2 Yachts</h4>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
+<ul [ngStyle]="{display:yachtVisibleHide }">
+  <li class="listCar">
+
+    Yacht Class: <select #ycl (change)="addYachtClass(ycl.value)">
+    <option value=""></option>
+    <option value="1">1</option>
+    <option value="1">2</option>
+  </select>
+    <!--<span class="">&times;</span>-->
   </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
+  <li class="listCar">
+    <input type="text" #st (keyup)="addState(st.value)" placeholder="State">
   </li>
+
   <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
+    <div class="add">+</div>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <div class="add">-</div>
   </li>
 </ul>
+
+
+<br>
+<!--<input (click)="addProducts()"  type="submit" value="Send to Server">-->
+<button (click)="addProducts()" >Send to Server</button>
+
+<div class="display">
+
+
+  <h4 *ngIf="carName" style="color:#5365ff">Car Name</h4>
+  {{carName}}
+
+  <h4 *ngIf="colorCar">Color</h4>
+  {{colorCar}}
+
+  <h4 *ngIf="engineCapacity">Engine Capacity</h4>
+  {{engineCapacity}}
+
+
+  <h4 *ngIf="yachtClass || stateYacht" style="color:blue">Yacht</h4>
+
+  <!--<h4 *ngIf="yachtClass" style="color:#5365ff">Yacht</h4>-->
+  <h4 *ngIf="yachtClass">Yacht Class</h4>
+  {{yachtClass}}
+
+  <h4 *ngIf="stateYacht">State</h4>
+  {{stateYacht}}
+
+</div>
+
 
