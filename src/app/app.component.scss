@@ -9,7 +9,9 @@ text-decoration: underline;
   padding-bottom: 5px;
 }
 
-.add {
+
+
+.add, .del {
   border-color: green;
   border-radius: 50%;
   width: 10px;
@@ -27,6 +29,11 @@ text-decoration: underline;
 
   display: inline-block;
 }
+.del{
+  background: white;
+  color: red;
+}
+
 
 .display{
   background: antiquewhite;
@@ -50,4 +57,16 @@ input[type="submit"]{
   margin:0;
 }
 
-
+.displaychose
+{
+  padding: 5px;
+  border: green 1px solid;
+  display: inline-block;
+}
+.chose{
+  border-radius: 20px;
+  border: sandybrown 1px solid;
+  color:blue;
+  padding: 2px;
+  margin: 5px;
+}

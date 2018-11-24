@@ -7,6 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
+  tmp:any;
+
   carName:string;
   colorCar:string;
   engineCapacity:number;
@@ -19,6 +21,9 @@ export class AppComponent {
     cars :{name: string, color: string, enrgcapacity: number }[]=[];
     yachts:{yclass:number, state: boolean}[]=[];
 
+   // arrayForshow :any[] =['carName'];
+  arrayForShow :any[] =[];
+
   constructor(){
     this.state=false;
     this.carVisibleHide='none';
@@ -27,11 +32,24 @@ export class AppComponent {
 
   }
 
+  showToDisplay(show: number, itis:string){
+
+    this.arrayForShow[show]=itis;
+//this.cars.push({name:itis});
+//console.log(this.cars[0].name);
+    //this.tmp= itis;
+
+    //console.log(this.tmp);
+    //this.show=carN;
+  }
+
   addcarName(carN:string){
     this.carName=carN;
    // this.cars[0].name=carN;
     //console.log(this.cars[0].name);
   }
+
+
 
    addcarColor(colorC:string){
     this.colorCar=colorC;
@@ -74,7 +92,7 @@ export class AppComponent {
     this.cars.push({name: this.carName, color: this.colorCar, enrgcapacity: this.engineCapacity });
     this.yachts.push({yclass:this.yachtClass, state: this.state});
 
-console.log(':)');
+console.log(this.cars[0].name+' '+ this.cars[0].color+" "+ this.cars[0].enrgcapacity);
   }
   // setData(set:string , data:string){
   //   this.set=data;
