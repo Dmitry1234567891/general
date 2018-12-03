@@ -34,7 +34,7 @@ export class AppComponent {
 
 
   }
-
+/////////////////////////////////////////////////////////////////////////////////////
   setValForFieldInObject(isIndex:number, nameField:string, event){
 
     switch (nameField) {
@@ -64,7 +64,7 @@ this.cars.push({name:'',color:'',enrgcapacity:null});
     console.log(this.cars);
   }
 
-
+////////////////////////////////////////////////////////////////////////
 
 
 
