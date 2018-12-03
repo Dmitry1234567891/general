@@ -1,7 +1,18 @@
 <!--<h4  (click)="carVisibleHide= 'carVisibleHide=== none'? 'block':'none' " class="neaderMenu">1 Cars</h4>-->
 
+<section >
+
+<form *ngFor="let carown of cars; let isIndex=index; let isLast = last; let isFirst = first;">
+  <input type="text" (input)="setValForFieldInObject(isIndex, 'name', $event)" placeholder="Car Name*">
+  <input type="text" (input)="setValForFieldInObject(isIndex, 'color', $event)" placeholder="Color">
+  <input type="text" (input)="setValForFieldInObject(isIndex, 'enrgcapacity', $event)" placeholder="Engine Capacity">
+  <div class="add" (click)="addcar()" *ngIf="isLast" >+</div>
+  <div class="add" (click)="delcar(isIndex)" *ngIf="!isFirst" >-</div>
+</form>
+</section>
+
 <h4 (click)="listCarVisibleHide()" class="neaderMenu">1 Cars</h4>
-<form name="cars1">
+<form>
 
 <ul [ngStyle]="{display:carVisibleHide }">
   <li class="listCar">
@@ -22,7 +33,7 @@
   </li>
 
   <li>
-    <div class="add">+</div>
+    <div class="add" >+</div>
     <!--&nbsp;&nbsp;&nbsp;&nbsp;-->
     <!--<div class="add">-</div>-->
   </li>

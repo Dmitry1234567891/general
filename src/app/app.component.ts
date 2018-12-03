@@ -18,10 +18,13 @@ export class AppComponent {
   carVisibleHide:string; // hidden visible List Cars
   yachtVisibleHide:string;  // hidden visible List Yahts
 
-    cars :{name: string, color: string, enrgcapacity: number }[]=[];
-    yachts:{yclass:number, state: boolean}[]=[];
+  ////cars :{name: string, color: string, enrgcapacity: number }[]=[];
 
-   // arrayForshow :any[] =['carName'];
+  cars :{name: string, color: string, enrgcapacity: number }[]=[{name:'',color:'',enrgcapacity:null}];
+
+  yachts:{yclass:number, state: boolean}[]=[];
+
+  // arrayForshow :any[] =['carName'];
   arrayForShow :any[] =[];
 
   constructor(){
@@ -31,6 +34,43 @@ export class AppComponent {
 
 
   }
+
+  setValForFieldInObject(isIndex:number, nameField:string, event){
+
+    switch (nameField) {
+
+      case "name":
+        this.cars[isIndex].name=event.target.value;
+        break;
+
+      case "color":
+        this.cars[isIndex].color=event.target.value;
+        break;
+
+      case "enrgcapacity":
+        this.cars[isIndex].enrgcapacity=event.target.value;
+        break;
+
+    }
+    console.log(this.cars);
+}
+
+addcar(){
+this.cars.push({name:'',color:'',enrgcapacity:null});
+}
+  delcar(isIndex:number){
+    this.cars.splice(isIndex,1);
+
+    console.log(this.cars);
+  }
+
+
+
+
+
+
+
+
 
   showToDisplay(show: number, itis:string){
 
@@ -45,13 +85,13 @@ export class AppComponent {
 
   addcarName(carN:string){
     this.carName=carN;
-   // this.cars[0].name=carN;
+    // this.cars[0].name=carN;
     //console.log(this.cars[0].name);
   }
 
 
 
-   addcarColor(colorC:string){
+  addcarColor(colorC:string){
     this.colorCar=colorC;
   }
 
@@ -71,11 +111,11 @@ export class AppComponent {
 
   listCarVisibleHide(){
 
-     if(this.carVisibleHide==='none'){
-       this.carVisibleHide='block';
-     }else{
-       this.carVisibleHide='none';
-     }
+    if(this.carVisibleHide==='none'){
+      this.carVisibleHide='block';
+    }else{
+      this.carVisibleHide='none';
+    }
 
   }
 
@@ -92,7 +132,7 @@ export class AppComponent {
     this.cars.push({name: this.carName, color: this.colorCar, enrgcapacity: this.engineCapacity });
     this.yachts.push({yclass:this.yachtClass, state: this.state});
 
-console.log(this.cars[0].name+' '+ this.cars[0].color+" "+ this.cars[0].enrgcapacity);
+    console.log(this.cars[0].name+' '+ this.cars[0].color+" "+ this.cars[0].enrgcapacity);
   }
   // setData(set:string , data:string){
   //   this.set=data;
