@@ -34,7 +34,7 @@ export class AppComponent {
 
 
   }
-/////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////
   setValForFieldInObject(isIndex:number, nameField:string, event){
 
     switch (nameField) {
@@ -52,7 +52,7 @@ export class AppComponent {
         break;
 
     }
-    console.log(this.cars);
+   // console.log(this.cars);
 }
 
 addcar(){
@@ -61,7 +61,7 @@ this.cars.push({name:'',color:'',enrgcapacity:null});
   delcar(isIndex:number){
     this.cars.splice(isIndex,1);
 
-    console.log(this.cars);
+   // console.log(this.cars);
   }
 
 ////////////////////////////////////////////////////////////////////////
