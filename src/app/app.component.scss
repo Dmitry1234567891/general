@@ -1,72 +1,11 @@
-.neaderMenu {
-  color: blue;
-  cursor: pointer;
-  font-weight: bold;
-text-decoration: underline;
+.hiddenElement{
+  //display: none;
 }
 
-.listCar {
-  padding-bottom: 5px;
+.showElement{
+  display: block;
+
 }
-
-
-
-.add, .del {
-  border-color: green;
-  border-radius: 50%;
-  width: 10px;
-  height: 10px;
-  background: green;
-
-  text-align: center;
-  font: 15px bold;
-  color: white;
-  cursor: pointer;
-  padding-left: 5px;
-  padding-right: 5px;
-  padding-bottom: 9px;
-  padding-top: 3px;
-
-  display: inline-block;
-}
-.del{
-  background: white;
-  color: red;
-}
-
-
-.display{
-  background: antiquewhite;
-  padding: 10px;
-  width: 250px;
-  height: 250px;
-  position: absolute;
-left:250px;
-  top:60px;
-}
-
-.sb{
-  margin-top:25px;
-}
-
-input[type="submit"]{
-  margin-top:25px;
-}
-
-.display h4{
-  margin:0;
-}
-
-.displaychose
-{
-  padding: 5px;
-  border: green 1px solid;
-  display: inline-block;
-}
-.chose{
-  border-radius: 20px;
-  border: sandybrown 1px solid;
-  color:blue;
-  padding: 2px;
-  margin: 5px;
+.test{
+  color: yellow;
 }
