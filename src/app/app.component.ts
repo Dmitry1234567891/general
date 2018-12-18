@@ -21,9 +21,9 @@ ngOnInit(){
 
  // this.renderer.addClass(this.element.nativeElement, 'hiddenElement');
 }
- showHideList(nameElem){
+ showHideList(){
 
-    const u =this.renderer.selectRootElement('#vegetables');
+   let u =this.renderer.selectRootElement('#vegetables');
     this.renderer.setStyle(u, 'color', 'red');
    console.log(this.element.nativeElement);
 
