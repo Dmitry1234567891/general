@@ -2,21 +2,22 @@
 
 
 
-  <div (click)="displayFruits=!displayFruits"><h3>Fruits</h3></div>
-  <ul #fruits [class.hiddenElement]='displayFruits'>
-    <li>Apple</li>
-    <li>Peach</li>
-    <li>Apricot</li>
-  </ul>
+  <!--<div (click)="displayFruits=!displayFruits"><h3>Fruits</h3></div>-->
+  <!--<ul #fruits [class.hiddenElement]='displayFruits'>-->
+    <!--<li>Apple</li>-->
+    <!--<li>Peach</li>-->
+    <!--<li>Apricot</li>-->
+  <!--</ul>-->
 
-  <div (click)="displayBerries=!displayBerries"><h3>Berries</h3></div>
-  <ul #berries [class.hiddenElement]= 'displayBerries'>
-    <li>Raspberries</li>
-    <li>Strawberry</li>
-  </ul>
+  <!--<div (click)="displayBerries=!displayBerries"><h3>Berries</h3></div>-->
+  <!--<ul #berries [class.hiddenElement]= 'displayBerries'>-->
+    <!--<li>Raspberries</li>-->
+    <!--<li>Strawberry</li>-->
+  <!--</ul>-->
 
   <div (click)="showHideList(vegetables)"><h3>Vegetables</h3></div>
-  <ul #vegetables >
+  <ul #vegetables  >
+    <li style="color: orangered" id="vegetables">Hi</li>
     <li  *ngFor="let a of testarr; ">{{a}}</li>
   </ul>
 
