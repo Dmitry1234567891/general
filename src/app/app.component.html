@@ -15,9 +15,16 @@
     <!--<li>Strawberry</li>-->
   <!--</ul>-->
 
-  <div (click)="showHideList()"><h3>Vegetables</h3></div>
-  <ul>
-    <li style="color: orangered" id="vegetables">Hi</li>
+  <div (click)="showHideList(berries)"><h3>Berries</h3></div>
+  <ul #berries >
+  <li>Raspberries</li>
+  <li>Strawberry</li>
+  </ul>
+
+
+  <div (click)="showHideListViewChild()"><h3>Vegetables</h3></div>
+  <ul #vegetables>
+    <li style="color: greenyellow" >Hi</li>
     <li  *ngFor="let a of testarr; ">{{a}}</li>
   </ul>
 

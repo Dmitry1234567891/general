@@ -1,33 +1,43 @@
-import { Component } from '@angular/core';
-import { Renderer2, ElementRef, OnInit } from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
+import { Renderer2, ElementRef,  } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit{
+export class AppComponent {
 testarr:any =['Tomatoes','Cucumbers'];
   displayFruits=true;
   displayBerries=true;
+  @ViewChild('vegetables')  vegetables: ElementRef;
 
- //renderer:Renderer2;
-//element:ElementRef;
-
-constructor(private renderer:Renderer2,private element:ElementRef){
+constructor(public renderer:Renderer2){
 
 }
 
-ngOnInit(){
 
- // this.renderer.addClass(this.element.nativeElement, 'hiddenElement');
-}
- showHideList(){
+ // showHideList(){
+ //
+ //    this.renderer.setStyle(this.vegetables.nativeElement, 'background-color','red');
+ //   this.renderer.addClass(this.vegetables.nativeElement,'hiddenElement');
+ //   //console.log(this.vegetables.nativeElement);
+ //
+ // }
 
-   let u =this.renderer.selectRootElement('#vegetables');
-    this.renderer.setStyle(u, 'color', 'red');
-   console.log(this.element.nativeElement);
+  showHideList(el:ElementRef){
+
+    this.renderer.addClass(el,'hiddenElement');
+
+  }
+
+  showHideListViewChild(){
+
+
+      //  this.renderer.setStyle(this.vegetables.nativeElement, 'background-color','red');
+        this.renderer.addClass(this.vegetables.nativeElement,'hiddenElement');
 
 
 
- }
+  }
+
 }
