@@ -1,0 +1,44 @@
+
+
+
+
+  <!--<div (click)="displayFruits=!displayFruits"><h3>Fruits</h3></div>-->
+  <!--<ul #fruits [class.hiddenElement]='displayFruits'>-->
+    <!--<li>Apple</li>-->
+    <!--<li>Peach</li>-->
+    <!--<li>Apricot</li>-->
+  <!--</ul>-->
+
+  <!--<div (click)="displayBerries=!displayBerries"><h3>Berries</h3></div>-->
+  <!--<ul #berries [class.hiddenElement]= 'displayBerries'>-->
+    <!--<li>Raspberries</li>-->
+    <!--<li>Strawberry</li>-->
+  <!--</ul>-->
+
+
+  <mat-form-field >
+    <mat-select placeholder="MultiSel" multiple>
+      <mat-option>Ford</mat-option>
+      <mat-option>Lada</mat-option>
+      <mat-option>Mazda</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <div (click)="showHideList(berries)"><h3>Berries</h3></div>
+  <ul #berries >
+  <li>Raspberries</li>
+  <li>Strawberry</li>
+  </ul>
+
+
+  <div (click)="showHideListViewChild()"><h3>Vegetables</h3></div>
+  <ul #vegetables>
+    <li style="color: greenyellow" >Hi</li>
+    <li  *ngFor="let a of testarr; ">{{a}}</li>
+  </ul>
+
+
+
+
+
+
