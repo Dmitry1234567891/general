@@ -1,27 +1,154 @@
+<!--<h4  (click)="carVisibleHide= 'carVisibleHide=== none'? 'block':'none' " class="neaderMenu">1 Cars</h4>-->
+
+<section >
+
+<form *ngFor="let carown of cars; let isIndex=index; let isLast = last; let isFirst = first;">
+  <input type="text" (input)="setValForFieldInObject(isIndex, 'name', $event)" placeholder="Car Name*">
+  <input type="text" (input)="setValForFieldInObject(isIndex, 'color', $event)" placeholder="Color">
+  <input type="text" (input)="setValForFieldInObject(isIndex, 'enrgcapacity', $event)" placeholder="Engine Capacity">
+  <div class="add" (click)="addcar()" *ngIf="isLast" >+</div>
+  <div class="add" (click)="delcar(isIndex)" *ngIf="!isFirst" >-</div>
+</form>
+</section>
+
+<h4 (click)="listCarVisibleHide()" class="neaderMenu">1 Cars</h4>
+<form>
+
+<ul [ngStyle]="{display:carVisibleHide }">
+  <li class="listCar">
+
+    <input type="text"  [(ngModel)]="carName" [ngModelOptions]="{standalone: true}" placeholder="Car Name*">
+    <!--<input type="text" #carnm (keyup)="showToDisplay(0,carnm.value)" placeholder="Car Name*">-->
+    <!--<input type="text" #carnm (keyup)="addcarName(carnm.value)" placeholder="Car Name">-->
+    <!--<span class="">&times;</span>-->
+  </li>
+  <li class="listCar">
+    <!--<input type="text" #colorcar (keyup)="addcarColor(colorcar.value)" placeholder="Color">-->
+    <input type="text" [(ngModel)]="colorCar" [ngModelOptions]="{standalone: true}" placeholder="Color">
+  </li>
+  <li class="listCar">
+
+    <input type="text" [(ngModel)]="engineCapacity" [ngModelOptions]="{standalone: true}" placeholder="Engine Capacity">
+    <!--<input type="text" #engcps (keyup)="addcarengineCapacity(engcps.value)" placeholder="Engine Capacity">-->
+  </li>
+
+  <li>
+    <div class="add" >+</div>
+    <!--&nbsp;&nbsp;&nbsp;&nbsp;-->
+    <!--<div class="add">-</div>-->
+  </li>
+
+</ul>
+</form>
+
+<form>
+  <h4 class="neaderMenu" (click)= "listYachtVisibleHide()">2 Yachts</h4>
+
+<ul [ngStyle]="{display:yachtVisibleHide }">
+  <li class="listCar">
+
+    <!--Yacht Class: <select #ycl (change)="addYachtClass(ycl.value)">-->
+    Yacht Class: <select [(ngModel)]="yachtClass"  [ngModelOptions]="{standalone: true}">
+    <option value=""></option>
+    <option value="1">1</option>
+    <option value="1">2</option>
+  </select>
+    <!--<span class="">&times;</span>-->
+  </li>
+  <li class="listCar">
+
+    <input type="text" [(ngModel)]="stateYacht"  [ngModelOptions]="{standalone: true}" placeholder="State*">
+    <!--<input type="text" #st (keyup)="addState(st.value)" placeholder="State*">-->
+  </li>
+
+  <li>
+
+    <div class="displaychose">
+      <span class="chose">White <span class="del">x</span></span>
+    </div>
+<br><br>
+    <a href="#">Red</a> &nbsp;&nbsp; <a href="#">Green</a>
+    <br>   <br>
+
+  </li>
+
+  <li>
+
+    <div class="add">+</div>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+
+  </li>
+</ul>
+
+  <!--<ul [ngStyle]="{display:yachtVisibleHide }">-->
+    <!--<li class="listCar">-->
+
+      <!--&lt;!&ndash;Yacht Class: <select #ycl (change)="addYachtClass(ycl.value)">&ndash;&gt;-->
+      <!--Yacht Class: <select [(ngModel)]="yachtClass"  [ngModelOptions]="{standalone: true}">-->
+      <!--<option value=""></option>-->
+      <!--<option value="1">1</option>-->
+      <!--<option value="1">2</option>-->
+    <!--</select>-->
+      <!--&lt;!&ndash;<span class="">&times;</span>&ndash;&gt;-->
+    <!--</li>-->
+    <!--<li class="listCar">-->
+
+      <!--<input type="text" [(ngModel)]="stateYacht"  [ngModelOptions]="{standalone: true}" placeholder="State*">-->
+      <!--&lt;!&ndash;<input type="text" #st (keyup)="addState(st.value)" placeholder="State*">&ndash;&gt;-->
+    <!--</li>-->
+
+    <!--<li>-->
+
+      <!--<div class="displaychose">-->
+        <!--<span class="chose">White <span class="del">x</span></span>-->
+      <!--</div>-->
+      <!--<br><br>-->
+      <!--<a href="#">Red</a> &nbsp;&nbsp; <a href="#">Green</a>-->
+      <!--<br>   <br>-->
+
+    <!--</li>-->
+
+    <!--<li>-->
+
+      <!--<div class="add">+</div>&nbsp;&nbsp; <div class="add">-</div>-->
+
+      <!--&nbsp;&nbsp;&nbsp;&nbsp;-->
+
+    <!--</li>-->
+  <!--</ul>-->
+</form>
+
+
+<!--<input (click)="addProducts()"  type="submit" value="Send to Server">-->
+<button (click)="addProducts()" >Send to Server</button>
 
 
 
-
-  <div (click)="displayFruits=!displayFruits"><h3>Fruits</h3></div>
-  <ul #fruits [class.hiddenElement]='displayFruits'>
-    <li>Apple</li>
-    <li>Peach</li>
-    <li>Apricot</li>
-  </ul>
-
-  <div (click)="displayBerries=!displayBerries"><h3>Berries</h3></div>
-  <ul #berries [class.hiddenElement]= 'displayBerries'>
-    <li>Raspberries</li>
-    <li>Strawberry</li>
-  </ul>
-
-  <div (click)="showHideList(vegetables)"><h3>Vegetables</h3></div>
-  <ul #vegetables >
-    <li  *ngFor="let a of testarr; ">{{a}}</li>
-  </ul>
+<div class="display">
 
 
+  <!--<h4 *ngIf="carName" style="color:#5365ff">Car Name</h4>-->
+  <!--{{carName}}-->
+  <h4 *ngIf="carName" style="color:#5365ff">Car Name</h4>
+  <!--{{arrayForShow[0]}}-->
+  {{carName}}
+
+  <h4 *ngIf="colorCar">Color</h4>
+  {{colorCar}}
+
+  <h4 *ngIf="engineCapacity">Engine Capacity</h4>
+  {{engineCapacity}}
 
 
+  <h4 *ngIf="yachtClass || stateYacht" style="color:blue">Yacht</h4>
+
+  <!--<h4 *ngIf="yachtClass" style="color:#5365ff">Yacht</h4>-->
+  <h4 *ngIf="yachtClass">Yacht Class</h4>
+  {{yachtClass}}
+
+  <h4 *ngIf="stateYacht">State</h4>
+  {{stateYacht}}
+
+</div>
 
 
