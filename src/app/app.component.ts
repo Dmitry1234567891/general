@@ -2,8 +2,8 @@ import {Component, ViewChild} from '@angular/core';
 import { Renderer2, ElementRef,  } from '@angular/core';
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  templateUrl: './app.component.html'
+
 })
 export class AppComponent {
 testarr:any =['Tomatoes','Cucumbers'];
@@ -42,7 +42,7 @@ constructor(public renderer:Renderer2){
 
   showHideCloshure(el:ElementRef){
 
-   let shhdlist=false;
+   /*let shhdlist=false;*/
 
 
 

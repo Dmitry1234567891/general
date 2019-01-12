@@ -4,8 +4,13 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-
 import {MatSelectModule} from '@angular/material/select';
+
+
+import { MatNativeDateModule,MatDatepickerModule,MatInputModule} from '@angular/material/';
+
+
+
 
 @NgModule({
   declarations: [
@@ -15,12 +20,13 @@ import {MatSelectModule} from '@angular/material/select';
     BrowserModule,
     FormsModule,
     BrowserAnimationsModule,
-    MatSelectModule
+    MatSelectModule,
+    MatNativeDateModule,MatDatepickerModule,MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
 
-export class PizzaPartyAppModule { }
+
 
