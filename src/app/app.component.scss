@@ -1,5 +1,4 @@
-
-/*dataparcer*/
+/*dataparcer1*/
 
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
@@ -13,14 +12,18 @@
   float: right;
 }
 /************************/
+
 .hiddenElement{
-  //display: none;
+  display: none;
 }
 
 .showElement{
   display: block;
-
+  cursor: pointer;
 }
+
+
 .test{
   color: yellow;
 }
+
