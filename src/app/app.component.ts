@@ -1,5 +1,6 @@
 import {Component, ViewChild} from '@angular/core';
 import { Renderer2, ElementRef,  } from '@angular/core';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html'

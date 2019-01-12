@@ -16,15 +16,18 @@
   <!--</ul>-->
 
 
-  <mat-form-field >
+  <app-datepicker-overview-example></app-datepicker-overview-example>
+
+
+
     <mat-select placeholder="MultiSel" multiple>
       <mat-option>Ford</mat-option>
       <mat-option>Lada</mat-option>
       <mat-option>Mazda</mat-option>
     </mat-select>
-  </mat-form-field>
 
-  <div (click)="showHideList(berries)"><h3>Berries</h3></div>
+
+ <div (click)="showHideList(berries)"><h3>Berries</h3></div>
   <ul #berries >
   <li>Raspberries</li>
   <li>Strawberry</li>
@@ -36,9 +39,4 @@
     <li style="color: greenyellow" >Hi</li>
     <li  *ngFor="let a of testarr; ">{{a}}</li>
   </ul>
-
-Hello)
-
-Hi :)
-
 
